@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+#Home{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "player player player"
+    ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+}
