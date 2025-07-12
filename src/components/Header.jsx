@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center bg-[#121212] px-52">
+    <header className="flex gap-5 justify-between items-center bg-[#121212] px-3 md:px-52">
       <div className="flex gap-6 items-center font-semibold text-gray-400">
         <NavLink
           to="/"
