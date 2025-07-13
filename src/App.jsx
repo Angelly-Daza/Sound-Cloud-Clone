@@ -37,6 +37,12 @@ function App() {
     };
   }, [navigate]);
 
+  // Función centralizada para seleccionar una canción y comenzar a reproducirla
+  const handleSelectSongAndPlay = (song) => {
+    setSelectedSong(song);
+    setIsPlaying(true);
+  };
+
   return (
     <>
       <SessionContextProvider supabaseClient={supabase}>
@@ -54,10 +60,8 @@ function App() {
               path="/mix/:id"
               element={
                 <DeveloperPlaylist
-                  onSelectSong={(song) => {
-                    setSelectedSong(song);
-                    setIsPlaying(true); //
-                  }}
+                  // Aseguramos que solo se use la función centralizada
+                  onSelectSong={handleSelectSongAndPlay} 
                   selectedSong={selectedSong}
                   isPlaying={isPlaying}
                 />
@@ -69,10 +73,8 @@ function App() {
               path="/search"
               element={
                 <Search
-                  onSelectSong={(song) => {
-                    setSelectedSong(song);
-                    setIsPlaying(true);
-                  }}
+                  // Aseguramos que solo se use la función centralizada
+                  onSelectSong={handleSelectSongAndPlay}
                   selectedSong={selectedSong}
                   isPlaying={isPlaying}
                 />
@@ -80,7 +82,11 @@ function App() {
             />
             <Route path="/likes" element={<LikedSongs />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/alltracks" element={<AllTracks />} />
+            {/* Aquí pasamos la función handleSelectSongAndPlay a AllTracks */}
+            <Route 
+              path="/alltracks" 
+              element={<AllTracks onSelectSong={handleSelectSongAndPlay} />} 
+            />
           </Routes>
 
           <div className="fixed bottom-14 md:bottom-0 left-0 w-full z-50">
