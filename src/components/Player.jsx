@@ -128,7 +128,7 @@ const Player = ({ song, isPlaying, setIsPlaying }) => {
   return (
     <>
       {song ? (
-        <div className="fixed bottom-0 left-0 w-full text-white z-50 overflow-y-hidden bg-[#333333] py-2 px-4 lg:px-32">
+        <div className="fixed bottom-0 mb-14 md:mb-0 left-0 w-full text-white z-50 overflow-y-hidden bg-[#333333] py-2 px-4 lg:px-32">
           {/* LAYOUT PARA PANTALLAS PEQUEÑAS (SM) */}
           <div className="flex sm:hidden items-center justify-around gap-4 w-full">
             <button
