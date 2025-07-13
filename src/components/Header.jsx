@@ -54,7 +54,7 @@ const Header = () => {
       <div className="flex gap-6 items-center font-semibold text-gray-400">
         <NavLink
           to="/upload"
-          className="hidden md:flexflex-col items-center text-mb hover:text-white transform transition"
+          className="hidden md:flex flex-col items-center text-mb hover:text-white transform transition"
         >
           Upload
         </NavLink>
